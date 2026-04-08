@@ -1,1 +1,1 @@
-# Skripta
+# Mikrokontroleri i Mikroračunari skripta
