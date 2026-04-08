@@ -21,7 +21,7 @@ class Element {
 class Paragraph extends Element {
     draw(data) {
         let p = document.createElement("p");
-        p.innerText = this.get_string_from(data);
+        p.innerHTML = this.get_string_from(data);
         container.appendChild(p);
     }
 }
@@ -41,7 +41,7 @@ class List extends Element {
 class ListItem extends Element {
     draw(data) {
         let li = document.createElement("li");
-        li.innerText = this.get_string_from(data);
+        li.innerHTML = this.get_string_from(data);
         currentList.appendChild(li);
     }
 }
@@ -86,7 +86,7 @@ class Link extends Element {
         let a = document.createElement("a");
         a.href = array[1];
         array.splice(0, 2);
-        a.innerText = array.join(' ');
+        a.innerHTML = array.join(' ');
         container.appendChild(a);
     } 
 }

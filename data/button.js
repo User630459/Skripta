@@ -1,5 +1,5 @@
 window.lessonData = `
-PARA Dugme (Button) može da se pritisne
+PARA Dugme (<i>Button</i>) može da se pritisne
 PARA Dugme je:
 LIST
 ITEM Crveno
