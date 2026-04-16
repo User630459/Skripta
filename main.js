@@ -26,6 +26,17 @@ class Paragraph extends Element {
     }
 }
 
+class Header extends Element {
+    draw(data) {
+        let array = data.split(' ');
+        let size = array[1];
+        let h = document.createElement("h"+size);
+        array.splice(0, 2);
+        h.innerHTML = array.join(' ');
+        container.appendChild(h);
+    } 
+}
+
 class List extends Element {
     constructor(data, html) {
         super(data);
@@ -91,12 +102,23 @@ class Link extends Element {
     } 
 }
 
+class Empty extends Element {
+    draw(data) {
+        let p = document.createElement("p");
+        p.innerText = "‎"
+        container.appendChild(p);
+    }
+}
+
+new Paragraph("PARA");
+new Header("HEAD");
 new Paragraph("PARA");
 new List("LIST", "ul");
 new List("NUMBER", "ol");
 new ListItem("ITEM");
 new Image("IMAGE");
 new Link("LINK");
+new Empty("EMPTY");
 
 function parseLine(rawLine) {
     for (let el of elements) {
