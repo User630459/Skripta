@@ -91,7 +91,7 @@ class Image extends Element {
     } 
 }
 
-class Link extends Element {
+class Anchor extends Element {
     draw(data) {
         let array = data.split(' ');
         let a = document.createElement("a");
@@ -102,21 +102,30 @@ class Link extends Element {
     } 
 }
 
+class Link extends Anchor {
+    draw(data) {
+        let p = document.createElement("p");
+        p.innerHTML = " ";
+        container.appendChild(p);
+        super.draw(data);
+    } 
+}
+
 class Empty extends Element {
     draw(data) {
         let p = document.createElement("p");
-        p.innerText = "‎"
+        p.innerText = "‎";
         container.appendChild(p);
     }
 }
 
 new Paragraph("PARA");
 new Header("HEAD");
-new Paragraph("PARA");
 new List("LIST", "ul");
 new List("NUMBER", "ol");
 new ListItem("ITEM");
 new Image("IMAGE");
+new Anchor("ANCHOR");
 new Link("LINK");
 new Empty("EMPTY");
 
